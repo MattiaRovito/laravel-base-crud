@@ -5,21 +5,25 @@
 @section('content')
 
 <div class="container">
-    <h1></h1>
+    <h1>{{$comic->title}}</h1>
 
     <div class="row">
         <div class="col"></div>
     </div>
 
     <div class="row">
-        <div class="col-md-4"></div>
+        <div class="col-4">
             {{-- Inserisco l'immagine --}}
-            <img src="" alt="">
-        <div class="col-md-8">
+            <img class="w-50 mb-3" src="{{$comic->thumb}}" alt="{{$comic->title}}">
+        </div>
+            
+        <div class="col-8">
             {{-- Inserisco la descrizione --}}
-            <p></p>
+            <p>{{$comic->description}}</p>
         </div>
     </div>
+
+    <p class="btn btn-success">Costo di {{$comic->price}} €</p>
 
 </div>
 
