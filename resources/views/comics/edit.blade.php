@@ -10,27 +10,27 @@
         @csrf
         <div class="mb-3">
             <label for="titolo" class="form-label">Titolo</label>
-            <input type="text" name="title" class="form-control" id="titolo">
+            <input type="text" name="title" class="form-control" id="titolo" value="{{$comic->title}}">
           </div>
         <div class="mb-3">
           <label for="immagine" class="form-label">Immagine</label>
-          <input type="text" name="thumb" class="form-control" id="immagine">
+          <input type="text" name="thumb" class="form-control" id="immagine" value="{{$comic->thumb}}">
         </div>
         <div class="mb-3">
             <label for="serie" class="form-label">Serie</label>
-            <input type="text" name="series" class="form-control" id="serie">
+            <input type="text" name="series" class="form-control" id="serie" value="{{$comic->series}}">
         </div>
         <div class="mb-3">
             <label for="tipo" class="form-label">Tipo</label>
             <select name="type" id="tipo" class="form-control">
-                <option value="genere">genere 1</option>
-                <option value="genere">genere 2</option>
-                <option value="genere">genere 3</option>
+                <option value="genere" value="{{$comic->type == ‘lunga’ ? ‘selected’ : ‘ ‘ }}">genere 1</option>
+                <option value="genere" value="{{$comic->type == ‘lunga’ ? ‘selected’ : ‘ ‘ }}" >genere 2</option>
+                <option value="genere" value="{{$comic->type == ‘lunga’ ? ‘selected’ : ‘ ‘ }}">genere 3</option>
             </select>
         </div>
         <div class="mb-3">
             <label for="prezzo" class="form-label">Prezzo</label>
-            <input type="text" name="price" class="form-control" id="prezzo">
+            <input type="text" name="price" class="form-control" id="prezzo" value="{{$comic->price}}">
         </div>
         <div class="mb-3">
             <label for="descrizione" class="form-label">Descrizione</label>

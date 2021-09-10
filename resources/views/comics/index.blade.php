@@ -24,7 +24,9 @@
             <td>{{$comic->series}}</td>
             <td>
                 <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Show</a>
-                <a href="" class="btn btn-success">Edit</a>
+
+                <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-success">Edit</a>
+                
                 <a href="" class="btn btn-danger">Delete</a>
             </td>
             
