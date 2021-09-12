@@ -12,6 +12,7 @@ class Comic extends Model
         "thumb",
         "price",
         "series",
+        "sale_date",
         "type"
     ];
 }

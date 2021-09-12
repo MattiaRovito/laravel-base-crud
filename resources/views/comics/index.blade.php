@@ -5,6 +5,19 @@
 @section('content')
 
 <div class="container">
+  
+    <p>
+      @if (session('modifica'))
+      <div class="alert alert-success">
+      {{ session('modifica') }}
+    </div>
+    @endif
+    @if (session('deleted'))
+    <div class="alert alert-success">
+      {{ session('deleted') }}
+    </div>
+    @endif
+
     <table class="table">
         <thead>
           <tr>
@@ -27,7 +40,11 @@
 
                 <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-success">Edit</a>
                 
-                <a href="" class="btn btn-danger">Delete</a>
+                <form action="{{ route ('comics.destroy',  $comic->id) }} " method="post"  class="d-inline-block">
+                  @csrf
+                  @method('DELETE')
+                  <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
             </td>
             
           </tr>

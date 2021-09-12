@@ -45,7 +45,7 @@ class ComicController extends Controller
 
 
         $newComic->save();
-        
+
         return redirect()->route('comics.show', $newComic->id);
     }
 
@@ -82,9 +82,15 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        // dd($request->all());
+
+        $data = $request->all();
+
+        $comic->update($data);
+
+        return redirect()->route('comics.index')->with('modifica','Hai appena modificato il record con id ' .$comic->id);
     }
 
     /**
@@ -93,8 +99,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comics.index')->with('deleted','Hai cancellato il prodotto ' . $comic->id);
     }
 }
