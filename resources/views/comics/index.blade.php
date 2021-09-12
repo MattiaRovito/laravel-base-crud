@@ -13,7 +13,7 @@
     </div>
     @endif
     @if (session('deleted'))
-    <div class="alert alert-success">
+    <div class="alert alert-danger">
       {{ session('deleted') }}
     </div>
     @endif
